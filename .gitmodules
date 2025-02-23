@@ -5,10 +5,6 @@
 [submodule "extern/pybind11"]
 	path = extern/pybind11
 	url = https://github.com/pybind/pybind11
-[submodule "extern/t-route"]
-	path = extern/t-route
-	url = https://github.com/noaa-owp/t-route.git
-  branch = ngen
 [submodule "extern/cfe/cfe"]
 	path = extern/cfe/cfe
 	url = https://github.com/NOAA-OWP/cfe.git
