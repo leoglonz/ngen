@@ -46,6 +46,6 @@
 [submodule "extern/lstm/lstm"]
 	path = extern/lstm/lstm
 	url = https://github.com/CIROH-UA/lstm
-# [submodule "extern/dhbv_2_0/dhbv_2_0"]
-# 	path = extern/dhbv_2_0/dhbv_2_0
-# 	url = https://github.com/mhpi/dHBV_2_0
+[submodule "extern/dhbv_2_0/dhbv_2_0"]
+	path = extern/dhbv_2_0/dhbv_2_0
+	url = https://github.com/mhpi/dHBV_2_0
