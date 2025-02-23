@@ -11,7 +11,8 @@ RUN curl -o cmake-3.10.3.tar.gz https://cmake.org/files/v3.10/cmake-3.10.3.tar.g
 RUN tar zxvf cmake-3.* && cd cmake-3.* && ./bootstrap --prefix=/usr/local && make -j$(nproc) && make install
 # ----------- Get nGen -----------
 
-RUN git clone https://github.com/NOAA-OWP/ngen.git 
+# RUN git clone https://github.com/NOAA-OWP/ngen.git
+RUN git clone git@github.com:leoglonz/ngen.git 
 
 WORKDIR ngen
 

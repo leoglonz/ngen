@@ -5,7 +5,8 @@ RUN yum update -y
 RUN yum install -y tar git gcc-c++ gcc make cmake python3 bzip2
 
 # ----------- Get nGen -----------
-RUN git clone https://github.com/NOAA-OWP/ngen.git 
+# RUN git clone https://github.com/NOAA-OWP/ngen.git 
+RUN git clone git@github.com:leoglonz/ngen.git 
 
 WORKDIR ngen
 
