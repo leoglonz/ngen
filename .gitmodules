@@ -46,3 +46,7 @@
 	path = extern/dhbv_2_0/dhbv_2_0
 	url = https://github.com/mhpi/dHBV_2_0
 	branch = master
+[submodule "extern/t-route"]
+	path = extern/t-route
+	url = https://github.com/leoglonz/t-route
+	branch = ngen
