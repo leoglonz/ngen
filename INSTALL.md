@@ -78,11 +78,9 @@ NGEN_QUIET            | Include suppressing unwanted message output
 The following CMake command will configure the build:
 
 ```shell
-cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
-      -DBOOST_ROOT=boost_1_79_0 \
-      -B /build \
-      -S .
+cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DBOOST_ROOT=boost_1_79_0 -B /build -S .
 ```
+^^ use this instead: cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DBOOST_ROOT=boost_1_79_0 -B build -S . 
 
 **Build NGen using cmake:**
 

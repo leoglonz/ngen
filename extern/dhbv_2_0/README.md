@@ -1,11 +1,11 @@
 # $\delta$ HBV 2.0 Submodule
 
-**Copying from LSTM rn for reference**
+*These instructions originally written for ngen implementation of NOAA-OWP [lstm](https://github.com/CIROH-UA/lstm)*
 
 ---
 
 ## About
-This submodule is linked in from: https://github.com/CIROH-UA/lstm, which is a fork of https://github.com/NOAA-OWP/lstm. This directory follows the template for linking submodules from https://github.com/NOAA-OWP/ngen/edit/master/extern/cfe/.
+This submodule is linked in from: https://github.com/mhpi/dHBV_2_0. This directory follows the template for linking submodules from https://github.com/NOAA-OWP/ngen/edit/master/extern/cfe/ and example set by Jonathan Frame et al. with https://github.com/CIROH-UA/lstm.
 
 #### Extra Outer Directory
 
@@ -23,9 +23,9 @@ There are two steps to getting upstream submodule changes fully
 
 To fetch and check out the latest revision (for the [currently used branch](#viewing-the-current-branch)):
 
-    git submodule update --init -- extern/lstm/lstm
+    git submodule update --init -- ./extern/dhbv_2_0/dhbv_2_0
 
 To commit the current submodule checkout revision to the CIROH UA NGen repo:
 
-    git add extern/lstm/lstm
+    git add ./extern/dhbv_2_0/dhbv_2_0
     git commit
