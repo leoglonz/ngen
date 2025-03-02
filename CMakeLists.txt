@@ -72,11 +72,11 @@ deprecated_option(OLD BMI_FORTRAN_ACTIVE    NEW NGEN_WITH_BMI_FORTRAN)
 deprecated_option(OLD QUIET                 NEW NGEN_QUIET)
 
 # Options to automate building of extern-distributed models
-option(NGEN_WITH_EXTERN_SLOTH                            "Build with extern-distributed SLoTH"            ON)
-cmake_dependent_option(NGEN_WITH_EXTERN_TOPMODEL         "Build with extern-distributed TOPMODEL"         ON "NGEN_WITH_BMI_C"       OFF)
-cmake_dependent_option(NGEN_WITH_EXTERN_CFE              "Build with extern-distributed CFE"              ON "NGEN_WITH_BMI_C"       OFF)
-cmake_dependent_option(NGEN_WITH_EXTERN_PET              "Build with extern-distributed PET"              ON "NGEN_WITH_BMI_C"       OFF)
-cmake_dependent_option(NGEN_WITH_EXTERN_NOAH_OWP_MODULAR "Build with extern-distributed Noah-OWP-Modular" ON "NGEN_WITH_BMI_FORTRAN" OFF)
+option(NGEN_WITH_EXTERN_SLOTH                            "Build with extern-distributed SLoTH"            OFF)
+cmake_dependent_option(NGEN_WITH_EXTERN_TOPMODEL         "Build with extern-distributed TOPMODEL"         OFF "NGEN_WITH_BMI_C"       OFF)
+cmake_dependent_option(NGEN_WITH_EXTERN_CFE              "Build with extern-distributed CFE"              OFF "NGEN_WITH_BMI_C"       OFF)
+cmake_dependent_option(NGEN_WITH_EXTERN_PET              "Build with extern-distributed PET"              OFF "NGEN_WITH_BMI_C"       OFF)
+cmake_dependent_option(NGEN_WITH_EXTERN_NOAH_OWP_MODULAR "Build with extern-distributed Noah-OWP-Modular" OFF "NGEN_WITH_BMI_FORTRAN" OFF)
 
 # Allow enabling of all extern models dependent on NGen options given.
 option(NGEN_WITH_EXTERN_ALL OFF)
@@ -152,7 +152,7 @@ endif()
 # -----------------------------------------------------------------------------
 # Account for different OS and how that impacts shared lib file names
 if(WIN32)
-    message(FATAL_ERROR "Windows platforms are not currently supported")
+     message(FATAL_ERROR "Windows platforms are not currently supported")
 elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
     set(NGEN_SHARED_LIB_EXTENSION "dylib")
 else()

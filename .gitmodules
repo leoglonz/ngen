@@ -5,14 +5,6 @@
 [submodule "extern/pybind11"]
 	path = extern/pybind11
 	url = https://github.com/pybind/pybind11
-[submodule "extern/t-route"]
-	path = extern/t-route
-	url = https://github.com/noaa-owp/t-route.git
-  branch = ngen
-[submodule "extern/cfe/cfe"]
-	path = extern/cfe/cfe
-	url = https://github.com/NOAA-OWP/cfe.git
-	branch = master
 [submodule "extern/topmodel/topmodel"]
 	path = extern/topmodel/topmodel
 	url = https://github.com/NOAA-OWP/topmodel.git
@@ -31,7 +23,7 @@
 [submodule "extern/SoilFreezeThaw/SoilFreezeThaw"]
 	path = extern/SoilFreezeThaw/SoilFreezeThaw
 	url = https://github.com/NOAA-OWP/SoilFreezeThaw
-        branch = master
+	branch = master
 [submodule "extern/SoilMoistureProfiles/SoilMoistureProfiles"]
 	path = extern/SoilMoistureProfiles/SoilMoistureProfiles
 	url = https://github.com/NOAA-OWP/SoilMoistureProfiles
@@ -43,3 +35,14 @@
 [submodule "extern/netcdf-cxx4"]
 	path = extern/netcdf-cxx4/netcdf-cxx4
 	url = https://github.com/Unidata/netcdf-cxx4/
+[submodule "extern/lstm/lstm"]
+	path = extern/lstm/lstm
+	url = https://github.com/CIROH-UA/lstm
+[submodule "extern/dhbv_2_0/dhbv_2_0"]
+	path = extern/dhbv_2_0/dhbv_2_0
+	url = https://github.com/mhpi/dHBV_2_0
+	branch = master
+[submodule "extern/t-route"]
+	path = extern/t-route
+	url = https://github.com/leoglonz/t-route
+	branch = ngen
