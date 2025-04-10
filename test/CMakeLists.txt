@@ -120,6 +120,7 @@ function(ngen_add_test TESTNAME)
 
         gtest_discover_tests(
             ${TESTNAME}
+            DISCOVERY_TIMEOUT 30
             WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
             PROPERTIES
                 VS_DEBUGGER_WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"

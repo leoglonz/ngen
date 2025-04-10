@@ -125,7 +125,7 @@ data/forcing/huc01_demo/
 data/hydrofabric/huc01_demo/
 
 # NGen build-related items
-.venv
+.venv*
 boost_*
 include/NGenConfig.h
 
@@ -135,3 +135,23 @@ include/NGenConfig.h
 data/forcing/huc01_demo/
 # HUC01 Demo Testing Hydrofabric
 data/hydrofabric/huc01_demo/
+
+builds/
+data/dhbv_2_0/
+output_dir
+sql
+
+# submodules:
+test/googletest
+extern/pybind11
+extern/topmodel/topmodel
+extern/noah-owp-modular/noah-owp-modular
+extern/bmi-cxx
+extern/evapotranspiration/evapotranspiration
+extern/SoilFreezeThaw/SoilFreezeThaw
+extern/SoilMoistureProfiles/SoilMoistureProfiles
+extern/sloth
+extern/netcdf-cxx4/netcdf-cxx4
+extern/lstm/lstm
+extern/dhbv_2_0/dhbv_2_0
+extern/t-route

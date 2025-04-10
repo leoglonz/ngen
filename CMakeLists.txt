@@ -43,20 +43,20 @@ include(ExternalSubdirectory)
 include(CMakeDependentOption)
 
 option(NGEN_WITH_MPI         "Build with MPI support"             OFF)
-option(NGEN_WITH_NETCDF      "Build with NetCDF support"          OFF)
-option(NGEN_WITH_SQLITE      "Build with SQLite3 support"         OFF)
+option(NGEN_WITH_NETCDF      "Build with NetCDF support"          ON)
+option(NGEN_WITH_SQLITE      "Build with SQLite3 support"         ON)
 option(NGEN_WITH_UDUNITS     "Build with UDUNITS2 support"        ON)
 option(NGEN_WITH_BMI_FORTRAN "Build with Fortran BMI support"     OFF)
 option(NGEN_WITH_BMI_C       "Build with C BMI support"           ON)
 option(NGEN_WITH_PYTHON      "Build with embedded Python support" ON)
 option(NGEN_WITH_TESTS       "Build with unit tests"              ON)
-option(NGEN_QUIET            "Silence output"                     OFF)
+option(NGEN_QUIET            "Silence output"                     ON)
 
 # These options require dependency on some of the above options
 # Syntax: cmake_dependent_option(<option> "<help_text>" <value> <depends> <force>)
-cmake_dependent_option(NGEN_WITH_ROUTING "Build with t-route integration" ON "NGEN_WITH_PYTHON" OFF)
+cmake_dependent_option(NGEN_WITH_ROUTING "Build with t-route integration" ON "NGEN_WITH_PYTHON" ON)
 cmake_dependent_option(NGEN_UPDATE_GIT_SUBMODULES "Update submodules on configure" ON "GIT_FOUND;NGEN_HAS_GIT_DIR" OFF)
-cmake_dependent_option(NGEN_WITH_COVERAGE "Build with test coverage" OFF "NGEN_WITH_TESTS" OFF)
+cmake_dependent_option(NGEN_WITH_COVERAGE "Build with test coverage" OFF "NGEN_WITH_TESTS" ON)
 
 option(BMI_FORTRAN_ISO_C_LIB_DIR "Directory hint for middleware Fortran shared lib handling iso_c_binding" "${NGEN_ROOT_DIR}/extern/iso_c_fortran_bmi/cmake_build")
 option(BMI_FORTRAN_ISO_C_LIB_NAME "Name for middleware Fortran shared lib handling iso_c_binding" "iso_c_bmi")
@@ -72,11 +72,11 @@ deprecated_option(OLD BMI_FORTRAN_ACTIVE    NEW NGEN_WITH_BMI_FORTRAN)
 deprecated_option(OLD QUIET                 NEW NGEN_QUIET)
 
 # Options to automate building of extern-distributed models
-option(NGEN_WITH_EXTERN_SLOTH                            "Build with extern-distributed SLoTH"            OFF)
-cmake_dependent_option(NGEN_WITH_EXTERN_TOPMODEL         "Build with extern-distributed TOPMODEL"         OFF "NGEN_WITH_BMI_C"       OFF)
+option(NGEN_WITH_EXTERN_SLOTH                            "Build with extern-distributed SLoTH"            ON)
+cmake_dependent_option(NGEN_WITH_EXTERN_TOPMODEL         "Build with extern-distributed TOPMODEL"         ON "NGEN_WITH_BMI_C"       OFF)
 cmake_dependent_option(NGEN_WITH_EXTERN_CFE              "Build with extern-distributed CFE"              OFF "NGEN_WITH_BMI_C"       OFF)
 cmake_dependent_option(NGEN_WITH_EXTERN_PET              "Build with extern-distributed PET"              OFF "NGEN_WITH_BMI_C"       OFF)
-cmake_dependent_option(NGEN_WITH_EXTERN_NOAH_OWP_MODULAR "Build with extern-distributed Noah-OWP-Modular" OFF "NGEN_WITH_BMI_FORTRAN" OFF)
+cmake_dependent_option(NGEN_WITH_EXTERN_NOAH_OWP_MODULAR "Build with extern-distributed Noah-OWP-Modular" ON "NGEN_WITH_BMI_FORTRAN" OFF)
 
 # Allow enabling of all extern models dependent on NGen options given.
 option(NGEN_WITH_EXTERN_ALL OFF)
@@ -151,7 +151,7 @@ endif()
 
 # -----------------------------------------------------------------------------
 # Account for different OS and how that impacts shared lib file names
-if(WIN32)
+if(WIN32 AND NOT WSL)
      message(FATAL_ERROR "Windows platforms are not currently supported")
 elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
     set(NGEN_SHARED_LIB_EXTENSION "dylib")
@@ -389,7 +389,9 @@ endmacro()
 # This is used purely for configuration output,
 # and does not affect the virtual environment used.
 if(DEFINED ENV{VIRTUAL_ENV})
-    set(NGEN_CONFIGURED_VENV "$ENV{VIRTUAL_ENV}")
+    set(NGEN_CONFIGURED_VENV_RAW "$ENV{VIRTUAL_ENV}")
+    # Convert to a CMake-compatible Unix-style path
+    file(TO_CMAKE_PATH "${NGEN_CONFIGURED_VENV_RAW}" NGEN_CONFIGURED_VENV)
 else()
     set(NGEN_CONFIGURED_VENV "<none>")
 endif()
