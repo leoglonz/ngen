@@ -141,7 +141,6 @@ builds/
 data/dhbv2/
 data/ddr/
 extern/ddr/
-extern/dhbv2/dhbv2/*
 *output*
 sql
 dev/
