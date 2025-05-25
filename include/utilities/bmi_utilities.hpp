@@ -44,7 +44,7 @@ namespace models {
             int item_size = model.GetVarItemsize(name);
             if( total_mem == 0 || item_size == 0){
                  // Early stop if no items to be returned (also prevents possible divide by 0 computing num_items)
-                 // Becuase this function is used by others which assume the return value to have AT LEAST
+                 // Because this function is used by others which assume the return value to have AT LEAST
                  // 1 value, then this is a terminal error.  This happens when the BMI model hasn't properly
                  // initialized/allocated/set the value to something meaningful.  This can happen, for example,
                  // with grid data if the variables themselves are dynamically allocated based on grid properties

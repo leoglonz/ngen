@@ -155,7 +155,7 @@ NetCDFPerFeatureDataProvider::NetCDFPerFeatureDataProvider(std::string input_pat
 
         if ( time_unit_att.isNull() )
         {
-            log_stream << "Warning using defualt time units\n";
+            log_stream << "Warning using default time units\n";
         }
         else
         {  
@@ -194,12 +194,12 @@ NetCDFPerFeatureDataProvider::NetCDFPerFeatureDataProvider(std::string input_pat
             time_scale_factor = .000000001;
         }
         else {
-            log_stream << "Warning using defualt time units\n";
+            log_stream << "Warning using default time units\n";
         }
     }
     catch(const netCDF::exceptions::NcException& e){
         std::cerr<<e.what()<<std::endl;
-        log_stream << "Warning using defualt time units\n";
+        log_stream << "Warning using default time units\n";
     }
     assert(time_scale_factor != 0); // This should not happen.
 
@@ -210,7 +210,7 @@ NetCDFPerFeatureDataProvider::NetCDFPerFeatureDataProvider(std::string input_pat
 
         if ( epoch_att.isNull() )
         {
-            log_stream << "Warning using defualt epoc string\n";
+            log_stream << "Warning using default epoch string\n";
         }
         else
         {  
@@ -219,7 +219,7 @@ NetCDFPerFeatureDataProvider::NetCDFPerFeatureDataProvider(std::string input_pat
     }
     catch(const netCDF::exceptions::NcException& e) {
         std::cerr<<e.what()<<std::endl;
-        log_stream << "Warning using defualt epoc string\n";
+        log_stream << "Warning using default epoch string\n";
     }
     
     std::tm tm{};
