@@ -1,0 +1,16 @@
+cmake -B extern/sloth/cmake_build -S extern/sloth && \
+make -C extern/sloth/cmake_build -- -j 16 && \
+cmake -B extern/topmodel/cmake_build -S extern/topmodel && \
+make -C extern/topmodel/cmake_build && \
+cmake -B extern/iso_c_fortran_bmi/cmake_build -S extern/iso_c_fortran_bmi && \
+make -C extern/iso_c_fortran_bmi/cmake_build && \
+cmake -B extern/noah-owp-modular/cmake_build -S extern/noah-owp-modular -DNGEN_IS_MAIN_PROJECT=ON && \
+make -C extern/noah-owp-modular/cmake_build && \
+cmake -B extern/evapotranspiration/evapotranspiration/cmake_build -S extern/evapotranspiration/evapotranspiration && \
+make -C extern/evapotranspiration/evapotranspiration/cmake_build && \
+cmake -B extern/sloth/cmake_build -S extern/sloth && \
+make -C extern/sloth/cmake_build && \
+cmake -B extern/SoilFreezeThaw/SoilFreezeThaw/cmake_build -S extern/SoilFreezeThaw/SoilFreezeThaw -DNGEN=ON && \
+cmake --build extern/SoilFreezeThaw/SoilFreezeThaw/cmake_build --target sftbmi -- -j 2 && \
+cmake -B extern/SoilMoistureProfiles/SoilMoistureProfiles/cmake_build -S extern/SoilMoistureProfiles/SoilMoistureProfiles -DNGEN=ON && \
+cmake --build extern/SoilMoistureProfiles/SoilMoistureProfiles/cmake_build --target smpbmi -- -j 2

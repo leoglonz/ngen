@@ -109,8 +109,8 @@ namespace realization {
          * given time step after the model has been updated to that point. The type returned will always be a `double`,
          * with other numeric types being cast if necessary.
          *
-         * The BMI spec requires for variable values to be passed to/from models via as arrays.  This function
-         * essentially  treats the variable array reference as if it were just a raw pointer and returns the `0`-th
+         * The BMI spec requires for variable values to be passed to/from models via arrays.  This function
+         * essentially treats the variable array reference as if it were just a raw pointer and returns the `0`-th
          * array value.
          *
          * @param t_index The index of the time step for which to run model calculations.
