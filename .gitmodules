@@ -40,7 +40,7 @@
 	url = https://github.com/CIROH-UA/lstm
 [submodule "extern/dhbv2/dhbv2"]
 	path = extern/dhbv2/dhbv2
-	url = https://github.com/mhpi/dHBV2.0
+	url = https://github.com/quinnylee/dhbv2
 	branch = master
 [submodule "extern/t-route"]
 	path = extern/t-route
